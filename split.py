@@ -51,4 +51,4 @@ if __name__=="__main__":
     input_loc = str(input("Enter file name: "))
     output_loc = './frames/'
     video_to_frames(input_loc, output_loc)
-
+    os.system("java Main blank")
