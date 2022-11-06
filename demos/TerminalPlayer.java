@@ -15,7 +15,9 @@ class TerminalPlayer {
     static Color current_pixel;
     static String[] frame;
     public static BufferedImage image;
-    public static void playvideo(String foldername, Integer frames) {
+    static long waittime;
+    public static void playvideo(String foldername, Integer frames, Integer fps) {
+        waittime = Math.round((float) 1 / ((float) 1 *  fps) * 1000000000);
         currentframe = 0;
         while ((currentframe > frames) == false) {
             currentframe++;
@@ -65,10 +67,41 @@ class TerminalPlayer {
             }
 //            System.out.println(currentframe);
             currentframe++;
-            Sleep("57");//60fps
+//            Sleep("57");//60fps
 //            Sleep("114");//30fps
+            currenttime = System.nanoTime() + waittime;
+
+
+            while (System.nanoTime() < currenttime) {
+//                System.out.println(System.nanoTime());
+////                System.out.println((waittime * (long) 1000000000));
+//                System.out.println("waittime = " + (waittime));
+//                System.out.println("currenttime = " + (currenttime));
+                Sleep("1");
+//                while (false) {
+//                    ///blank
+//                }
+            }
+            if (inited) {
+                nowfps++;
+                if (System.nanoTime() > lasttime + 1000000000) {
+                    pastnowfps = nowfps;
+                    nowfps = 0;
+                    lasttime = System.nanoTime();
+                }
+                System.out.println("[0mfps: \"" + pastnowfps + "\"");
+            } else {
+                lasttime = System.nanoTime();
+                inited = true;
+            }
         }
     }
+    static Long lasttime;
+    static Integer nowfps = 0;
+    static Integer pastnowfps = 0;
+    static Boolean inited = false;
+    static Integer skip;
+    static long currenttime;
     public static void Sleep(String ms) {
         try {
             timeout1(ms);
