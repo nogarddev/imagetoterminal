@@ -59,7 +59,7 @@ class TerminalPlayer {
                 y++;
             }
             System.out.print("[H");
-            System.out.print("[2J");
+//            System.out.print("[2J");
             while (i.equals(frame.length) == false) {
                 System.out.println(frame[i++]);
             }
