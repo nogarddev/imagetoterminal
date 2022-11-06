@@ -108,14 +108,14 @@ public class Main {
                     average_g = total_g / selected_pixels;
                     average_b = total_b / selected_pixels;
                     setpixel((x) / x_factor, (y) / y_factor, average_r, average_g, average_b);
-                    frame[(y) / y_factor][(x) / x_factor] = "[48;2;" + average_r + ";" + average_g + ";" + average_b + "m ";
+//                    frame[(y) / y_factor][(x) / x_factor] = "[48;2;" + average_r + ";" + average_g + ";" + average_b + "m ";
                     x = x + x_factor;
     //                System.out.println("average_r = " + average_r);
     //                System.out.println("average_g = " + average_g);
     //                System.out.println("average_b = " + average_b);
-                    System.out.print("[1A");
-                    System.out.print("[2K");
-                    System.out.println(finished_segments + " segments done out of " + total_segments + " segments");
+//                    System.out.print("[1A");
+//                    System.out.print("[2K");
+//                    System.out.println(finished_segments + " segments done out of " + total_segments + " segments");
                 }
                 x = 0;
                 y = y + y_factor;
