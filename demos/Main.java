@@ -4,6 +4,6 @@ class Main {
 //        System.out.println(System.nanoTime());
 //        TerminalPlayer.Sleep("1000");
 //        System.out.println(System.nanoTime());
-        terminalPlayer.playvideo("outputdir", 6571, 29);
+        terminalPlayer.playvideo("outputdir", 6571, 25);
     }
 }
