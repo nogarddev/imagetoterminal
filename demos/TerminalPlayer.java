@@ -19,6 +19,20 @@ class TerminalPlayer {
     public static void playvideo(String foldername, Integer frames, Integer fps) {
         waittime = Math.round((float) 1 / ((float) 1 *  fps) * 1000000000);
         currentframe = 0;
+        String[][] frametimes =  new String[frames][2];
+        i = 0;
+        while (i.equals((frametimes.length - 1)) == false) {
+            frametimes[i++][1] = "0";
+        }
+        i = 0;
+        long current = System.nanoTime();
+        while (i.equals((frametimes.length - 1)) == false) {
+            frametimes[i++][0] = String.valueOf(current + (waittime * i));
+        }
+        i = 0;
+//        while (i.equals(frametimes.length) == false) {
+//            System.out.println(frametimes[i++][0]);
+//        }
         while ((currentframe > frames) == false) {
             currentframe++;
             filename = String.valueOf(currentframe);
@@ -60,6 +74,9 @@ class TerminalPlayer {
                 }
                 y++;
             }
+
+
+//            while (System.nanoTime() < currenttime) {
             System.out.print("[H");
 //            System.out.print("[2J");
             while (i.equals(frame.length) == false) {
@@ -70,32 +87,64 @@ class TerminalPlayer {
 //            Sleep("57");//60fps
 //            Sleep("114");//30fps
             currenttime = System.nanoTime() + waittime;
-
-
-            while (System.nanoTime() < currenttime) {
+            if (true) {
 //                System.out.println(System.nanoTime());
 ////                System.out.println((waittime * (long) 1000000000));
 //                System.out.println("waittime = " + (waittime));
 //                System.out.println("currenttime = " + (currenttime));
-                Sleep("1");
+//                Sleep("1");
+//                skip = 1;
+                i = 0;
+                long a = Long.parseLong(frametimes[i + 1][0]);
+                Long b = System.nanoTime();
+                while ((a < b) || frametimes[i][1].equals("1")) {
+                    frametimes[i][1] = "1";
+                    i++;
+//                    System.out.println("i = " + i);
+                    a = Long.parseLong(frametimes[i + 1][0]);
+                    b = System.nanoTime();
+                }
+                currentframe = i;
+                //                i = 0;
+                //                while (i.equals(frametimes.length) == false) {
+//                    System.out.println(frametimes[i][1]);
+//                }
+                a = Long.parseLong(frametimes[i + 1][0]);
+                b = System.nanoTime();
+//                i = 0;
+                while (a > System.nanoTime()) {
+                    b = System.nanoTime();
+//                    skip = 1;
+//                    System.out.println("iterating");
+//                    while (skip == 1) {
+//                    System.out.println(i++);
+//                    while ((float) 1 == Float.parseFloat("1")) {
+//                        System.out.println("waiting");
+//                    }
+//                    }
+                }
+                frametimes[i][1] = "1";
+                i = 0;
 //                while (false) {
 //                    ///blank
 //                }
             }
-            if (inited) {
-                nowfps++;
-                if (System.nanoTime() > lasttime + 1000000000) {
-                    pastnowfps = nowfps;
-                    nowfps = 0;
-                    lasttime = System.nanoTime();
-                }
-                System.out.println("[0mfps: \"" + pastnowfps + "\"");
-            } else {
-                lasttime = System.nanoTime();
-                inited = true;
-            }
+//            if (inited) {
+//                nowfps++;
+//                if (System.nanoTime() > lasttime + 1000000000) {
+//                    pastnowfps = nowfps;
+//                    nowfps = 0;
+//                    lasttime = System.nanoTime();
+//                }
+//                System.out.println("[0mfps: \"" + pastnowfps + "\"");
+//                System.out.println("Wait time: " + (float) waittime / 1000000000 + "s");
+//            } else {
+//                lasttime = System.nanoTime();
+//                inited = true;
+//            }
         }
     }
+    static String[][] framestimes;
     static Long lasttime;
     static Integer nowfps = 0;
     static Integer pastnowfps = 0;
