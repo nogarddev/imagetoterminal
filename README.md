@@ -3,3 +3,4 @@ currently a WIP tool to change videos to ansi 256 bit colour codes, by splitting
 To run run "python3 split.py"
 
 Credit for the python script I used: https://stackoverflow.com/questions/33311153/python-extracting-and-saving-video-frames
+Credit for sleep script: https://stackoverflow.com/questions/824110/accurate-sleep-for-java-on-windows
