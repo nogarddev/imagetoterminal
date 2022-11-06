@@ -7,7 +7,7 @@ Credit for the python script I used and modified to extract the frames from the 
 ## usage
 Look in "/demos/Main.java" to see how to adress the TerminalPlayer script. The options are in the order {directory name of the folder of files for usage (the output of ImageToTerminal},{the amount of frames to be played},{the fps to play them at} 
 
-To use this you must run split.py and enter the dimensions of your console window. The dimensions you choose must be a factor (or perfect multiple) of the previous dimensions or the script will fail.
+To use this you must run split.py and enter the dimensions of your console window. The dimensions you choose must be a factor (or perfect multiple) of the source's dimensions or the script will fail.
 
 When entering the output folder, make sure it already exisits as the script will not make its own folder, and you would not want to lose frames.
 
