@@ -5,7 +5,7 @@ To run: run "python3 split.py"
 
 Credit for the python script I used and modified to extract the frames from the video: https://stackoverflow.com/questions/33311153/python-extracting-and-saving-video-frames
 ## usage
-Look in "/demos/Main.java" to see how to adress the TerminalPlayer script. The options are in the order {directory of the folder of files for usage (the output of ImageToTerminal},{the amount of frames to be played},{the fps to play them at} 
+Look in "/demos/Main.java" to see how to adress the TerminalPlayer script. The options are in the order {directory name of the folder of files for usage (the output of ImageToTerminal},{the amount of frames to be played},{the fps to play them at} 
 
 To use this you must run split.py and enter the dimensions of your console window. The dimensions you choose must be a factor (or perfect multiple) of the previous dimensions or the script will fail.
 
