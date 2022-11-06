@@ -3,7 +3,7 @@ ImageToTerminal is a tool to change videos to ansi 24 bit colour codes, by split
 TerminalPlayer is a tool to interpret the output of ImageToTerminal and display it in the terminal.
 To run: run "python3 split.py"
 
-Credit for the python script I used: https://stackoverflow.com/questions/33311153/python-extracting-and-saving-video-frames
+Credit for the python script I used and modified to extract the frames from the video: https://stackoverflow.com/questions/33311153/python-extracting-and-saving-video-frames
 ## usage
 Look in "/demos/Main.java" to see how to adress the TerminalPlayer script. Custom FPS update will come to this at some point but currently you can edit the fps by looking at lines 68 and 69 of /demos/TerminalPlayer.java
 
